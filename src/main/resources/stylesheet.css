@@ -1,0 +1,29 @@
+/* Style for the button */
+.button {
+    -fx-background-image: url('start.png'); /* Path to your image */
+    -fx-background-size: cover; /* Ensures the image covers the button */
+    -fx-background-repeat: no-repeat; /* Ensures the image is not repeated */
+    -fx-background-position: center; /* Centers the image in the button */
+
+    -fx-text-fill: transparent; /* Hides the text on the button */
+    -fx-border-width: 0; /* Removes any border around the button */
+    -fx-background-color: transparent; /* Ensures no background color is applied */
+    -fx-cursor: hand; /* Changes cursor to hand when hovered over the button */
+
+    /* Optional: Remove the padding so that only the image is visible */
+    -fx-padding: 0;
+
+    /* Optional: Set a minimum size for the button */
+    -fx-min-width: 100px;
+    -fx-min-height: 50px;
+}
+
+/* Optional: Hover effect */
+.button:hover {
+    -fx-opacity: 0.8; /* Slight opacity change on hover */
+}
+
+/* Optional: Pressed effect */
+.button:pressed {
+    -fx-opacity: 0.6; /* Slight opacity change when the button is pressed */
+}

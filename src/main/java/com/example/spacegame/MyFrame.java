@@ -1,7 +1,6 @@
 package com.example.spacegame;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import java.io.IOException;
 
 public class MyFrame {
     private GameStarter gameStarter;
@@ -9,7 +8,7 @@ public class MyFrame {
     public void setGameStarter(GameStarter gameStarter) {
         this.gameStarter = gameStarter;}
 
-    public void onStartButtonClick() {
+    public void onStartButtonClick() throws IOException {
       if (gameStarter != null) {
             gameStarter.startGame();
         }

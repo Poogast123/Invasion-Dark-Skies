@@ -1,5 +1,7 @@
 package com.example.spacegame;
 
+import java.io.IOException;
+
 public interface GameStarter {
-    void startGame();
+    void startGame() throws IOException;
 }

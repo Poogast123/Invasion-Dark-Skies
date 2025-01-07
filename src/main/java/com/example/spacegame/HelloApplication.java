@@ -4,10 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaException;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -29,7 +28,7 @@ public class HelloApplication extends Application implements GameStarter{
                 "-fx-background-position: center;");
 
         // Background Music
-        String musicFile = "/CityStomper.mp3"; // Path to the music file in resources
+        String musicFile = "/Hazy - Dreamscape.mp3"; // Path to the music file in resources
         Media media = new Media(Objects.requireNonNull(getClass().getResource(musicFile)).toExternalForm()); // Load the music
         MediaPlayer mediaPlayer = new MediaPlayer(media); // Create a MediaPlayer for the music
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Set it to loop indefinitely
@@ -45,9 +44,10 @@ public class HelloApplication extends Application implements GameStarter{
 
 
         Scene scene = new Scene(root);
-        mainStage.setTitle("SpaceGame");
+        mainStage.setTitle("Invasion: Dark Skies");
         mainStage.setScene(scene);
-        mainStage.setMaximized(true);
+        mainStage.setFullScreen(true); // Set the stage to full size
+
         mainStage.show();
 
         // Pass the instance of this class to the controller
@@ -64,9 +64,9 @@ public class HelloApplication extends Application implements GameStarter{
     }
 
     @Override
-    public void startGame() {
+    public void startGame() throws IOException {
         Game game = GameFactory.createGame();
-        game.start(mainStage);
+        game.starter(mainStage);
 
     }
 
